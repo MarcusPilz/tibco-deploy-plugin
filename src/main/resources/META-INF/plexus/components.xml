@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component-set>
+	<components>
+
+		<!-- BW EAR deployment -->
+		
+
+		<component>
+			<role>org.apache.maven.lifecycle.mapping.LifecycleMapping</role>
+			<role-hint>bw-ear</role-hint>
+			<implementation>org.apache.maven.lifecycle.mapping.DefaultLifecycleMapping
+			</implementation>
+ 			<configuration>
+ 				<lifecycles>
+ 					<lifecycle>
+ 						<id>default</id>
+						<phases>
+   							<generate-sources>
+   								
+  							</generate-sources>
+  							<generate-resources>
+   								
+  							</generate-resources>
+  							<process-resources>
+   								
+  							</process-resources>
+							<compile>
+								
+							</compile>
+							<generate-test-sources>
+								
+							</generate-test-sources>
+							<generate-test-resources>
+								
+							</generate-test-resources>
+  							<process-test-resources>
+   								
+  							</process-test-resources>
+							<install>
+								com.dbsystel.tibco.plugins:tibco-deploy-plugin:deploy
+							</install>
+							<deploy>
+							</deploy>
+						</phases>
+ 					</lifecycle>
+ 				</lifecycles>
+			</configuration>
+		</component>
+
+		<component>
+			<role>org.apache.maven.artifact.handler.ArtifactHandler</role>
+			<role-hint>bw-ear</role-hint>
+			<implementation>org.apache.maven.artifact.handler.DefaultArtifactHandler
+			</implementation>
+			<configuration>
+				<type>bw-ear</type>
+				<extension>ear</extension>
+				<packaging>bw-ear</packaging>
+			</configuration>
+		</component>
+	</components>
+</component-set>
